@@ -1,5 +1,9 @@
+// import * as XLSX from 'xlsx';
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
+const filePath = '../assets/fileData/task.xlsx'
+
+
 
 //declare variables
 const navTabs = $$('.nav-tab')
@@ -131,304 +135,6 @@ const memberInfo = [
 ]
 
 
-const progressTask_Week1 = [
-    {
-        
-        name: "Nguyễn Thành Phát",
-        mssv: "23130231",
-        task: "Quản lí code chung",
-        result: "Hoàn thành",
-        progress: "100" 
-    },
-    {
-        
-        name: "Nguyễn Thị Hương Lan",
-        mssv: "23130168",
-        task: "Lên ý tưởng thiết kế",
-        result: "Hoàn thành",
-        progress: "100"
-    },
-    {
-    
-        name: "Trần Lê Phúc An",
-        mssv: "23130004",
-        task: "Phân tích các chức năng",
-        result: "Hoàn thành",
-        progress: "100"
-    },
-    {
-
-        name: "Châu Thị Thúy Quỳnh",
-        mssv: "23130265",
-        task: "Làm phần login",
-        result: "Hoàn thành",
-        progress: "100"
-    },
-    {
-        name: "Chu Tấn tài",
-        mssv: "23130280",
-        task: "Lên khung web bằng HTML, CSS",
-        result: "Hoàn thành",
-        progress: "100"
-    },
-]
-const progressTask_Week2 = [
-    {
-        
-        name: "Nguyễn Thành Phát",
-        mssv: "23130231",
-        task: "Quản lí code chung",
-        result: "Hoàn thành",
-        progress: "100" 
-    },
-    {
-        
-        name: "Nguyễn Thị Hương Lan",
-        mssv: "23130168",
-        task: "Thiết kế giao diện",
-        result: "Hoàn thành",
-        progress: "100"
-    },
-    {
-    
-        name: "Trần Lê Phúc An",
-        mssv: "23130004",
-        task: "Hoàn thành tab Requirement",
-        result: "Hoàn thành",
-        progress: "100"
-    },
-    {
-
-        name: "Châu Thị Thúy Quỳnh",
-        mssv: "23130265",
-        task: "Làm phần setting",
-        result: "Trong quá trình",
-        progress: "30"
-    },
-    {
-        name: "Chu Tấn tài",
-        mssv: "23130280",
-        task: "Lên khung web bằng HTML, CSS",
-        result: "Trong quá trình",
-        progress: "70"
-    },
-]
-const progressTask_Week3 = [
-    {
-        
-        name: "Nguyễn Thành Phát",
-        mssv: "23130231",
-        task: "Quản lí code chung",
-        result: "Hoàn thành",
-        progress: "100" 
-    },
-    {
-        
-        name: "Nguyễn Thị Hương Lan",
-        mssv: "23130168",
-        task: "Làm tab Design",
-        result: "Hoàn thành",
-        progress: "100"
-    },
-    {
-    
-        name: "Trần Lê Phúc An",
-        mssv: "23130004",
-        task: "Phân tích các chức năng, Hoàn thành tab Requirement",
-        result: "Hoàn thành",
-        progress: "100"
-    },
-    {
-
-        name: "Châu Thị Thúy Quỳnh",
-        mssv: "23130265",
-        task: "Kiểm tra tính ổn định của login và setting",
-        result: "Hoàn thành",
-        progress: "100"
-    },
-    {
-        name: "Chu Tấn tài",
-        mssv: "23130280",
-        task: "Lên khung web bằng HTML, CSS",
-        result: "Hoàn thành",
-        progress: "100"
-    },
-]
-const progressTask_Week4 = [
-    {
-        
-        name: "Nguyễn Thành Phát",
-        mssv: "23130231",
-        task: "Quản lí code chung",
-        result: "Hoàn thành",
-        progress: "100" 
-    },
-    {
-        
-        name: "Nguyễn Thị Hương Lan",
-        mssv: "23130168",
-        task: "Kiểm tra giao diện, hoàn thành tab Design",
-        result: "Hoàn thành",
-        progress: "100"
-    },
-    {
-    
-        name: "Trần Lê Phúc An",
-        mssv: "23130004",
-        task: "Kiểm tra tính ổn định và loại bỏ các chức năng không cần thiết",
-        result: "Hoàn thành",
-        progress: "100"
-    },
-    {
-
-        name: "Châu Thị Thúy Quỳnh",
-        mssv: "23130265",
-        task: "Nâng cấp chức năng login, register, forgot password",
-        result: "Hoàn thành",
-        progress: "100"
-    },
-    {
-        name: "Chu Tấn tài",
-        mssv: "23130280",
-        task: "Lên khung web bằng HTML, CSS kết hợp thêm JavaScript một số phần",
-        result: "Hoàn thành",
-        progress: "100"
-    }
-]
-const progressTask_Week5 = [
-    {
-        
-        name: "Nguyễn Thành Phát",
-        mssv: "23130231",
-        task: "Chưa có",
-        result: "",
-        progress: "0" 
-    },
-    {
-        
-        name: "Nguyễn Thị Hương Lan",
-        mssv: "23130168",
-        task: "Chưa có",
-        result: "",
-        progress: "0"
-    },
-    {
-    
-        name: "Trần Lê Phúc An",
-        mssv: "23130004",
-        task: "Chưa có",
-        result: "",
-        progress: "0"
-    },
-    {
-
-        name: "Châu Thị Thúy Quỳnh",
-        mssv: "23130265",
-        task: "Chưa có",
-        result: "",
-        progress: "0"
-    },
-    {
-        name: "Chu Tấn tài",
-        mssv: "23130280",
-        task: "Chưa có",
-        result: "",
-        progress: "0"
-    },
-]
-const progressTask_Week6 = [
-    {
-        
-        name: "Nguyễn Thành Phát",
-        mssv: "23130231",
-        task: "Chưa có",
-        result: "",
-        progress: "0" 
-    },
-    {
-        
-        name: "Nguyễn Thị Hương Lan",
-        mssv: "23130168",
-        task: "Chưa có",
-        result: "",
-        progress: "0"
-    },
-    {
-    
-        name: "Trần Lê Phúc An",
-        mssv: "23130004",
-        task: "Chưa có",
-        result: "",
-        progress: "0"
-    },
-    {
-
-        name: "Châu Thị Thúy Quỳnh",
-        mssv: "23130265",
-        task: "Chưa có",
-        result: "",
-        progress: "0"
-    },
-    {
-        name: "Chu Tấn tài",
-        mssv: "23130280",
-        task: "Chưa có",
-        result: "",
-        progress: "0"
-    },
-]
-const progressTask_Week7 = [
-    {
-        
-        name: "Nguyễn Thành Phát",
-        mssv: "23130231",
-        task: "Chưa có",
-        result: "",
-        progress: "0" 
-    },
-    {
-        
-        name: "Nguyễn Thị Hương Lan",
-        mssv: "23130168",
-        task: "Chưa có",
-        result: "",
-        progress: "0"
-    },
-    {
-    
-        name: "Trần Lê Phúc An",
-        mssv: "23130004",
-        task: "Chưa có",
-        result: "",
-        progress: "0"
-    },
-    {
-
-        name: "Châu Thị Thúy Quỳnh",
-        mssv: "23130265",
-        task: "Chưa có",
-        result: "",
-        progress: "0"
-    },
-    {
-        name: "Chu Tấn tài",
-        mssv: "23130280",
-        task: "Chưa có",
-        result: "",
-        progress: "0"
-    },
-]
-
-
-const tasks = [progressTask_Week1,
-    progressTask_Week2,
-    progressTask_Week3,
-    progressTask_Week4,
-    progressTask_Week5,
-    progressTask_Week6,
-    progressTask_Week7
-]
-
 
 //do code
 function backtoHome()
@@ -441,6 +147,28 @@ function reloadPage()
     window.location.reload()
 }
 
+
+
+// fetch(filePath)
+// .then(res => res.arrayBuffer())
+// .then(data =>
+// {
+//     const workbook = XLSX.read(data, {type: 'array'})
+//     const sheetName = workbook.SheetNames[0]
+//     const sheet = workbook.Sheets[sheetName]
+//     const jsonData = XLSX.utils.sheet_to_json(sheet)
+//     jsonData.forEach(dt => 
+//         {
+//             console.log(dt.Progress);
+               
+//         }
+//     )
+    
+    
+// }).catch(err =>
+// {
+//     console.log('Error loading Excel file:', err);
+// })
 
 
 
@@ -637,38 +365,59 @@ const renderTable = (stt, mssv, name, task, result, progress)=>
 }
 
 
-
-
-weekBtns.forEach((btn, index)=>
+fetch(filePath)
+.then(res => res.arrayBuffer())
+.then(data =>
 {
-    const weekTask = tasks[index]
-    
-    btn.addEventListener('click', function()
-    {
-        $('.week-btn.active').classList.remove('active')
-        table_body.replaceChildren()
-
-        weekTask.forEach((task, index)=>
+    const workbook = XLSX.read(data, {type: 'array', raw: true})
+    const sheetName = workbook.SheetNames[0]
+    const sheet = workbook.Sheets[sheetName]
+    const jsonData = XLSX.utils.sheet_to_json(sheet)
+    jsonData.forEach(dt => 
         {
             if(table_body)
             {
-                table_body.appendChild(renderTable(index+1, task?.mssv, task?.name, task?.task, task?.result, task?.progress))
+                table_body.appendChild(renderTable(dt.No, dt.StudentID, dt.FullName, dt.AssignedTask, dt.Result, dt.Progress))
             }
-        })
-
-        this.classList.add('active')
-    })
-})
-
-tasks[0].forEach((task, index)=>
+        }
+    )
+}).catch(err =>
 {
-    if(table_body)
-    {
-        table_body.appendChild(renderTable(index+1, task?.mssv, task?.name, task?.task, task?.result, task?.progress))
-    }
+    console.log('Error loading Excel file:', err);
 })
 
 
+
+
+let sheetDataCache = [];
+fetch(filePath)
+  .then(res => res.arrayBuffer())
+  .then(data => {
+    const workbook = XLSX.read(data, { type: 'array', raw: true });
+    sheetDataCache = workbook.SheetNames.map(sheetName => 
+      XLSX.utils.sheet_to_json(workbook.Sheets[sheetName])
+    );
+  })
+  .catch(err => {
+    console.log('Error loading Excel file:', err);
+  });
+
+weekBtns.forEach((btn, index) => {
+  btn.addEventListener('click', function () {
+    $('.week-btn.active').classList.remove('active');
+    table_body.replaceChildren();
+
+    const jsonData = sheetDataCache[index] || [];
+    jsonData.forEach(dt => {
+      if (table_body) {
+        table_body.appendChild(
+          renderTable(dt.No, dt.StudentID, dt.FullName, dt.AssignedTask, dt.Result, dt.Progress)
+        );
+      }
+    });
+    this.classList.add('active');
+  });
+});
 
 
 
@@ -792,7 +541,7 @@ const renderImplementation = ()=>
 }
 
 
-
+// const imgBox = renderImageBox()
 
 
 const showRequire = ()=>
