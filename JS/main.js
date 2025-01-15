@@ -22,77 +22,57 @@ const aboutSection = $('.about-section')
 
 const imgInfo = [
     {
-        name: "about",
-        link: "../assets/img/about.webp"
-    },
-    {
-        name: "home",
+        name: "Home",
         link: "../assets/img/home.webp"
     },
     {
-        name: "practice",
-        link: "../assets/img/practice.webp"
+        name: "About",
+        link: "../assets/img/about.webp"
     },
     {
-        name: "profile",
-        link: "../assets/img/profile.webp"
-    },
-    {
-        name: "login",
-        link: "../assets/img/login.webp"
-    },
-    {
-        name: "login",
-        link: "../assets/img/login_1.webp"
-    },
-    {
-        name: "register",
-        link: "../assets/img/register.webp"
-    },
-    {
-        name: "register",
-        link: "../assets/img/register1.webp"
-    },
-    {
-        name: "course",
-        link: "../assets/img/courses_1.webp"
-    },
-    {
-        name: "course",
-        link: "../assets/img/courses_2.webp"
-    },
-    {
-        name: "home project",
-        link: "../assets/img/home_project.webp"
-    },
-    {
-        name: "stuff",
-        link: "../assets/img/stuff.webp"
-    },
-    {
-        name: "video",
-        link: "../assets/img/video.webp"
-    },
-    {
-        name: "group diary",
+        name: "Group diary",
         link: "../assets/img/group_diary.webp"
     },
     {
-        name: "forgot password",
-        link: "../assets/img/forgot_pass_1.webp"
-    },
-    {
-        name: "forgot password",
-        link: "../assets/img/forgot_pass_2.webp"
-    },
-    {
-        name: "progress",
-        link: "../assets/img/progress.webp"
-    },
-    {
-        name: "project",
+        name: "Project",
         link: "../assets/img/project.webp"
     },
+    {
+        name: "Home Project",
+        link: "../assets/img/home_project.webp"
+    },
+    {
+        name: "Recipes",
+        link: "../assets/img/recipes.webp"
+    },
+    {
+        name: "Recipes_01",
+        link: "../assets/img/recipes1.webp"
+    },
+    {
+        name: "Recipes_02",
+        link: "../assets/img/recipes2.webp"
+    },
+    {
+        name: "Blog",
+        link: "../assets/img/blog.webp"
+    },
+    {
+        name: "Contact us",
+        link: "../assets/img/contact.webp"
+    },
+    {
+        name: "Login",
+        link: "../assets/img/login.webp"
+    },
+    {
+        name: "Register",
+        link: "../assets/img/register.webp"
+    },
+    {
+        name: "forgot password",
+        link: "../assets/img/forgot_pass.webp"
+    }
 ]
 
 
@@ -116,34 +96,32 @@ const memberInfo = [
         id: "23130004",
         img: "../assets/imgs/female3.webp",
         position: "Phân tích dữ liệu",
-        info: "Trần Lê Phúc An phụ trách phân tích dữ liệu công việc, thiết thiết kế giới thiệu nhóm. Sinh viên năm hai khoa công nghệ thông tin (khóa 49) trường đại học Nông Lâm."
+        info: ""
     },
     {
         name: "Châu Thị Thúy Quỳnh",
         id: "23130265",
         img: "../assets/imgs/female2.webp",
         position: "Lập trình viên",
-        info: "Châu Thị Thúy Quỳnh phụ trách thiết kế đăng nhập, đăng ký người dùng. Sinh viên năm hai khoa công nghệ thông tin (khóa 49) trường đại học Nông Lâm."
+        info: ""
     },
     {
         name: "Chu Tấn Tài",
         id: "23130280",
         img: "../assets/imgs/male2.webp",
         position: "Lập trình viên",
-        info: "Chu Tấn Tài phụ trách thiết kế nội dung học toán cho người dùng. Sinh viên năm hai khoa công nghệ thông tin (khóa 49) trường đại học Nông Lâm."
+        info: ""
     },
 ]
 
 
 
 //do code
-function backtoHome()
-{
+function backtoHome() {
     window.location.href = `../index.html`
 }
 
-function reloadPage()
-{
+function reloadPage() {
     window.location.reload()
 }
 
@@ -160,11 +138,11 @@ function reloadPage()
 //     jsonData.forEach(dt => 
 //         {
 //             console.log(dt.Progress);
-               
+
 //         }
 //     )
-    
-    
+
+
 // }).catch(err =>
 // {
 //     console.log('Error loading Excel file:', err);
@@ -173,11 +151,9 @@ function reloadPage()
 
 
 
-navTabs.forEach((tab, index)=>
-{
-   
-    tab.addEventListener('click', function()
-    {
+navTabs.forEach((tab, index) => {
+
+    tab.addEventListener('click', function () {
         $('.nav-tab.active').classList.remove('active')
 
         this.classList.add('active')
@@ -187,8 +163,7 @@ navTabs.forEach((tab, index)=>
 
 
 
-const renderMember = (name, link, index)=>
-{
+const renderMember = (name, link, index) => {
     const box = document.createElement('div')
     box.classList.add('box')
     box.style = `--i: ${index}`
@@ -203,8 +178,7 @@ const renderMember = (name, link, index)=>
 }
 
 
-const renderDetails = (name, link, id, pos, info)=>
-{
+const renderDetails = (name, link, id, pos, info) => {
     const bigInfo = document.createElement('div')
     bigInfo.classList.add('bigInfo')
 
@@ -235,8 +209,7 @@ const renderDetails = (name, link, id, pos, info)=>
 }
 
 
-const renderSideMember = ()=>
-{
+const renderSideMember = () => {
     const sideMem = document.createElement('div')
     sideMem.classList.add('side-member')
     sideMem.innerHTML = `
@@ -260,86 +233,72 @@ const renderSideMember = ()=>
 }
 
 
-const showMembers = ()=>
-{
-       if(memberContainer)  
-       {
-            memberContainer.replaceChildren()
-       }
-        memberInfo.forEach((member, index)=>
-        {
-            if(memberContainer)
-            {
-                memberContainer.appendChild(renderMember(member.name, member.img, index+1))
-            }
-        })
-        repeatShow()
+const showMembers = () => {
+    if (memberContainer) {
+        memberContainer.replaceChildren()
+    }
+    memberInfo.forEach((member, index) => {
+        if (memberContainer) {
+            memberContainer.appendChild(renderMember(member.name, member.img, index + 1))
+        }
+    })
+    repeatShow()
 }
 
-const showSideMember = ()=>
-{
-    if(aboutSection)
-    {
+const showSideMember = () => {
+    if (aboutSection) {
         aboutSection.appendChild(renderSideMember())
     }
 }
 
 showSideMember()
-if($('.side-member'))
-{
+if ($('.side-member')) {
     $('.side-member').style.display = `none`
 }
 const imgMebers = $$('.img-mem')
 
-imgMebers.forEach((member, index)=>
-{
+imgMebers.forEach((member, index) => {
     const mem = memberInfo[index]
-    member.addEventListener('click', function()
-    {
+    member.addEventListener('click', function () {
         $('.img-mem.active').classList.remove('active')
         this.classList.add('active')
         memberContainer.replaceChildren()
 
         const bigInfo = renderDetails(mem.name, mem.img, mem.id, mem.position, mem.info)
         const button = bigInfo.querySelector('button')
-        button.addEventListener('click', ()=>
-            {
-                memberContainer.replaceChildren()
-                $('.side-member').style.display = `none` 
-                showMembers()
-            })
-        
+        button.addEventListener('click', () => {
+            memberContainer.replaceChildren()
+            $('.side-member').style.display = `none`
+            showMembers()
+        })
+
         memberContainer.appendChild(bigInfo)
     })
 })
 
 
-const repeatShow = ()=>
-{
+const repeatShow = () => {
     const boxes = $$('.box')
-    boxes.forEach((box, index)=>
-    {
+    boxes.forEach((box, index) => {
         const mem = memberInfo[index]
         const imgMem = imgMebers[index]
-        box.addEventListener('click', function()
-        {
+        box.addEventListener('click', function () {
             memberContainer.replaceChildren()
 
-            $('.side-member').style.display = `flex`  
-            $('.img-mem.active').classList.remove('active') 
+            $('.side-member').style.display = `flex`
+            $('.img-mem.active').classList.remove('active')
             imgMem.classList.add('active')
 
             const bigInfo = renderDetails(mem.name, mem.img, mem.id, mem.position, mem.info)
             const button = bigInfo.querySelector('button')
-            button.addEventListener('click', ()=>
-                {
-                    memberContainer.replaceChildren()
-                    $('.side-member').style.display = `none` 
-                    showMembers()
-                })
-        
+            button.addEventListener('click', () => {
+                memberContainer.replaceChildren()
+                $('.side-member').style.display = `none`
+                showMembers()
+            })
+
             memberContainer.appendChild(bigInfo)
-            
+
         })
     })
 }
@@ -349,8 +308,7 @@ repeatShow()
 
 
 
-const renderTable = (stt, mssv, name, task, result, progress)=>
-{
+const renderTable = (stt, mssv, name, task, result, progress) => {
     const tableRow = document.createElement('tr')
     tableRow.classList.add('t-row')
     tableRow.innerHTML = `
@@ -366,89 +324,86 @@ const renderTable = (stt, mssv, name, task, result, progress)=>
 
 
 fetch(filePath)
-.then(res => res.arrayBuffer())
-.then(data =>
-{
-    const workbook = XLSX.read(data, {type: 'array', raw: true})
-    const sheetName = workbook.SheetNames[0]
-    const sheet = workbook.Sheets[sheetName]
-    const jsonData = XLSX.utils.sheet_to_json(sheet)
-    jsonData.forEach(dt => 
-        {
-            if(table_body)
-            {
+    .then(res => res.arrayBuffer())
+    .then(data => {
+        const workbook = XLSX.read(data, { type: 'array', raw: true })
+        const sheetName = workbook.SheetNames[0]
+        const sheet = workbook.Sheets[sheetName]
+        const jsonData = XLSX.utils.sheet_to_json(sheet)
+        jsonData.forEach(dt => {
+            if (table_body) {
                 table_body.appendChild(renderTable(dt.No, dt.StudentID, dt.FullName, dt.AssignedTask, dt.Result, dt.Progress))
             }
         }
-    )
-}).catch(err =>
-{
-    console.log('Error loading Excel file:', err);
-})
+        )
+    }).catch(err => {
+        console.log('Error loading Excel file:', err);
+    })
 
 
 
 
 let sheetDataCache = [];
 fetch(filePath)
-  .then(res => res.arrayBuffer())
-  .then(data => {
-    const workbook = XLSX.read(data, { type: 'array', raw: true });
-    sheetDataCache = workbook.SheetNames.map(sheetName => 
-      XLSX.utils.sheet_to_json(workbook.Sheets[sheetName])
-    );
-  })
-  .catch(err => {
-    console.log('Error loading Excel file:', err);
-  });
+    .then(res => res.arrayBuffer())
+    .then(data => {
+        const workbook = XLSX.read(data, { type: 'array', raw: true });
+        sheetDataCache = workbook.SheetNames.map(sheetName =>
+            XLSX.utils.sheet_to_json(workbook.Sheets[sheetName])
+        );
+    })
+    .catch(err => {
+        console.log('Error loading Excel file:', err);
+    });
 
 weekBtns.forEach((btn, index) => {
-  btn.addEventListener('click', function () {
-    $('.week-btn.active').classList.remove('active');
-    table_body.replaceChildren();
+    btn.addEventListener('click', function () {
+        $('.week-btn.active').classList.remove('active');
+        table_body.replaceChildren();
 
-    const jsonData = sheetDataCache[index] || [];
-    jsonData.forEach(dt => {
-      if (table_body) {
-        table_body.appendChild(
-          renderTable(dt.No, dt.StudentID, dt.FullName, dt.AssignedTask, dt.Result, dt.Progress)
-        );
-      }
+        const jsonData = sheetDataCache[index] || [];
+        jsonData.forEach(dt => {
+            if (table_body) {
+                table_body.appendChild(
+                    renderTable(dt.No, dt.StudentID, dt.FullName, dt.AssignedTask, dt.Result, dt.Progress)
+                );
+            }
+        });
+        this.classList.add('active');
     });
-    this.classList.add('active');
-  });
 });
 
 
 
 
 
-const renderRequirement = ()=>
-{
+const renderRequirement = () => {
     const reqireContent = document.createElement('div')
     reqireContent.classList.add('requirement-content')
-    reqireContent.innerHTML =  `
+    reqireContent.innerHTML = `
                 <h2>Chức năng chính</h2>
                 <ul>
                   <li>
-                    <strong>Tìm kiếm bài học:</strong> Người dùng có thể tìm kiếm nội dung
-                    bài học thông qua từ khóa, giúp tiết kiệm thời gian và nâng cao trải
-                    nghiệm học tập.
+                    <strong>Tìm kiếm các công thức món ăn :</strong> Cho phép người dùng tìm kiếm các công thức nấu ăn qua từ khóa, nguyên liệu, thời gian chuẩn bị, hoặc loại món ăn (món chính, món tráng miệng, món ăn nhẹ, v.v.).
                   </li>
                   <li>
-                    <strong>Quản lý người dùng:</strong> Chức năng dành cho admin, cho
-                    phép quản lý thông tin người dùng như xem danh sách, chỉnh sửa hoặc
-                    xoá tài khoản không còn hoạt động.
+                    <strong>Chia sẻ công thức :</strong> Người dùng có thể đăng tải công thức của mình, chia sẻ những món ăn tự nấu, đồng thời có thể kèm theo hình ảnh hoặc video hướng dẫn chi tiết.
                   </li>
                   <li>
-                    <strong>Quản lý bài học:</strong> Admin có thể thêm, sửa, xoá và cập
-                    nhật nội dung các bài học, đảm bảo rằng thông tin luôn được cập nhật
+                    <strong>Lưu và tạo bộ sưu tập công thức :</strong> Cho phép người dùng lưu lại những công thức yêu thích và tạo bộ sưu tập riêng để dễ dàng tham khảo lại.
                     và chính xác.
                   </li>
                   <li>
-                    <strong>Thống kê và Báo cáo:</strong> Cung cấp thông tin thống kê về
-                    hoạt động của người dùng và các bài học, giúp admin theo dõi hiệu quả
-                    hoạt động của nền tảng.
+                    <strong>Hướng dẫn từng bước :</strong> Công thức sẽ được trình bày rõ ràng, thường kèm theo các bước hướng dẫn chi tiết, hình ảnh hoặc video minh họa để người dùng dễ dàng thực hiện.
+                  </li>
+                  <li>
+                    <strong>Thông tin dinh dưỡng :</strong> Cung cấp thông tin về giá trị dinh dưỡng của các món ăn, giúp người dùng chọn lựa món ăn phù hợp với nhu cầu sức khỏe của mình.
+                  </li>
+                  <li>
+                    <strong>Kết nối cộng đồng :</strong> Tạo không gian để người dùng giao lưu, học hỏi lẫn nhau, thảo luận về các công thức, nguyên liệu và kỹ thuật nấu ăn.
+                  </li>
+                  <li>
+                    <strong>Tính năng tương tác và cá nhân hóa :</strong> Đề xuất công thức dựa trên sở thích, thói quen ăn uống, hoặc các món ăn đã thử trước đây, giúp cá nhân hóa trải nghiệm của người dùng.
                   </li>
                 </ul>
           
@@ -464,34 +419,27 @@ const renderRequirement = ()=>
                     <tr>
                       <td>Nguyễn Thành Phát</td>
                       <td>
-                        Phân công công việc, quản lí tiến độ.Tạo cấu trúc menu Group Diary
-                        và các phần mục.
+                          Quản lý, tổng hợp code, hoàn thiện project.
+
                       </td>
                     </tr>
                     <tr>
                     <td>Nguyễn Thị Hương Lan</td>
                     <td>
-                    Quản lý chức năng Design: Xây dựng phần Quản lý người dùng và Quản
-                    lý bài học
+                        Design, tối ưu ảnh, hoàn thiện project.
                     </td>
                     </tr>
                     <tr>
                     <td>Trần Lê Phúc An</td>
-                    <td>
-                    Quản lý chức năng: Liệt kê các chức năng của website và phân công
-                    người thực hiện từng chức năng.
-                    </td>
+                    <td></td>
                     </tr>
                     <tr>
                       <td>Châu Thị Thúy Quỳnh</td>
-                      <td>Hoàn thiện chức năng Login / Register / Forgot Pass</td>
+                      <td></td>
                     </tr>
                     <tr>
                       <td>Chu Tấn Tài</td>
-                      <td>
-                        Quản lý chức năng: Tạo phần HTML cho các chức năng của website như
-                        đăng ký, đăng nhập, tìm kiếm bài học, v.v...
-                      </td>
+                      <td></td>
                     </tr>
                   </tbody>
                 </table>
@@ -500,8 +448,7 @@ const renderRequirement = ()=>
     return reqireContent
 }
 
-const renderImage = (name, link)=>
-{
+const renderImage = (name, link) => {
     const img = document.createElement('div')
     img.classList.add('image-box')
     img.innerHTML = `
@@ -513,13 +460,11 @@ const renderImage = (name, link)=>
 
 
 
-const renderImageBox = ()=>
-{
+const renderImageBox = () => {
     const imgBox = document.createElement('div')
     imgBox.classList.add('design-content')
 
-    imgInfo.forEach(inf =>
-    {
+    imgInfo.forEach(inf => {
         imgBox.appendChild(renderImage(inf.name, inf.link))
     }
     )
@@ -527,8 +472,7 @@ const renderImageBox = ()=>
 }
 
 
-const renderImplementation = ()=>
-{
+const renderImplementation = () => {
     const impleContent = document.createElement('div')
     impleContent.classList.add('implementation-content')
     impleContent.innerHTML = `
@@ -544,19 +488,16 @@ const renderImplementation = ()=>
 // const imgBox = renderImageBox()
 
 
-const showRequire = ()=>
-{
-    if(mainContent) mainContent.appendChild(renderRequirement())
+const showRequire = () => {
+    if (mainContent) mainContent.appendChild(renderRequirement())
 }
 
-const showDesign = ()=>
-{
-    if(mainContent) mainContent.appendChild(renderImageBox())
+const showDesign = () => {
+    if (mainContent) mainContent.appendChild(renderImageBox())
 }
 
-const showImplementation = ()=>
-{
-    if(mainContent) mainContent.appendChild(renderImplementation())
+const showImplementation = () => {
+    if (mainContent) mainContent.appendChild(renderImplementation())
 }
 
 
@@ -564,43 +505,37 @@ const showImplementation = ()=>
 showRequire()
 // showDesign()
 // showImplementation()
-const projectTabs = [()=> showRequire(), ()=>showDesign(), ()=>showImplementation()]
+const projectTabs = [() => showRequire(), () => showDesign(), () => showImplementation()]
 
 
-proTabs.forEach((tab, index)=>
-    {
-        
-        tab.addEventListener('click', function()
-        {
-            $('.proTab.active').classList.remove('active')
-            this.classList.add('active')  
-            mainContent.replaceChildren()
-            projectTabs[index]()
-            if(index === 2)
-            {
-                const funcBtn = $$('.funcBtn')
-                const webProjectFunction = [
-                    ()=>renderLogin(),
-                    ()=>renderRegister(),
-                    ()=>renderForgotPassword()
-                ]
-                
-                if(funcBtn)
-                {
-                    funcBtn.forEach((btn, index) =>
-                        {
-                            btn.addEventListener('click', ()=>
-                            {
-                                mainContent.replaceChildren()
-                                mainContent.appendChild(webProjectFunction[index]())
-                            })
-                        }
-                        )
+proTabs.forEach((tab, index) => {
+
+    tab.addEventListener('click', function () {
+        $('.proTab.active').classList.remove('active')
+        this.classList.add('active')
+        mainContent.replaceChildren()
+        projectTabs[index]()
+        if (index === 2) {
+            const funcBtn = $$('.funcBtn')
+            const webProjectFunction = [
+                () => renderLogin(),
+                () => renderRegister(),
+                () => renderForgotPassword()
+            ]
+
+            if (funcBtn) {
+                funcBtn.forEach((btn, index) => {
+                    btn.addEventListener('click', () => {
+                        mainContent.replaceChildren()
+                        mainContent.appendChild(webProjectFunction[index]())
+                    })
                 }
+                )
             }
-            
-        })
+        }
+
     })
+})
 
 
 
@@ -609,92 +544,6 @@ proTabs.forEach((tab, index)=>
 // <---------------------------------------THIS IS LOGIN------------------------------------>
 
 
-const renderLogin = ()=>
-{
-    const containerLogin = document.createElement('div')
-    containerLogin.classList.add('container')
-    containerLogin.innerHTML = 
-    `
-        <button class="back-btn" onclick="toggleForms()"> < Back</button>
-        <h1>LOG IN</h1>
-        <p class="login-text">Don't have an account? <a href="#" onclick="toggleForms()">Register</a></p>
-        <form>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Enter your password" required>
-            <a href="#" class="forgot-password" onclick="showForgotPasswordForm()">Forgot password?</a>
-            <button type="submit" class="btn">Log in</button>
-            <div class="divider">Or login with</div>
-            <div class="social-buttons">
-                <button type="button" class="social-btn">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google"> Google
-                </button>
-                <button type="button" class="social-btn">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png" alt="Facebook"> Facebook
-                </button>
-            </div>
-        </form>
-    `
-    return containerLogin
-}
-
-
-const renderRegister = ()=>
-{
-    const containerRegister = document.createElement('div')
-    containerRegister.classList.add('container')
-    containerRegister.innerHTML = `
-        <button class="back-btn" onclick="toggleForms()"> < Back</button>
-        <h1>Create an account</h1>
-        <p class="login-text">Already have an account? <a href="#" onclick="toggleForms()">Log in</a></p>
-        <form>
-            <div class="input-group">
-                <input type="text" placeholder="Name" required>
-                <input type="text" placeholder="Last Name" required>
-            </div>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Enter your password" required>
-            <div class="checkbox-group">
-                <input type="checkbox" id="agree" required>
-                <label for="agree">I agree to the terms and conditions</label>
-            </div>
-            <button type="submit" class="btn">Create account</button>
-            <div class="divider">Or register with</div>
-            <div class="social-buttons">
-                <button type="button" class="social-btn">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google"> Google
-                </button>
-                <button type="button" class="social-btn">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png" alt="Facebook"> Facebook
-                </button>
-            </div>
-        </form>
-    `
-    return containerRegister
-}
-
-const renderForgotPassword = ()=>
-{
-    const containerPass = document.createElement('div')
-    containerPass.classList.add('container')
-    containerPass.innerHTML = `
-        <button class="back-btn" onclick="toggleForms()"> < Back</button>
-        <h1>Forgot password?</h1>
-        <p class="message">No worries, we'll send you reset instructions.</p>
-        <form onsubmit="handleForgotPassword(event)">
-            <label for="resetEmail" class="label">Email</label>
-            <input type="email" id="resetEmail" placeholder="Enter your email" required>
-            <button type="submit" class="btn">Reset password</button>
-            
-            <div class="success-message hidden" id="successMessage">
-                Password reset instructions have been sent to your email!
-            </div>
-            <div class="error-message hidden" id="errorMessage">
-                Email not found. Please try again.
-            </div>
-        </form>
-    `
-    return containerPass
-}
 
 
 
