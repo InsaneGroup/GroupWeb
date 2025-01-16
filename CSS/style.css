@@ -1,15 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Quicksand:wght@300..700&display=swap');
-*
-{
-    padding: 0; margin: 0; box-sizing: border-box;   font-family: "Quicksand", sans-serif;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
     image-rendering: pixelated;
     text-decoration: none;
     list-style: none;
 }
 
-:root
-{
+:root {
     --msu-green: #16423c;
     --bright-gray: #e9efec;
     --snow: #fafafa;
@@ -47,8 +49,7 @@
 }
 
 
-body
-{
+body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -56,8 +57,7 @@ body
     height: 100%;
 }
 
-#slide
-{
+#slide {
     position: fixed;
     inset: 0;
     background-color: var(--draw4);
@@ -69,8 +69,7 @@ body
 
 
 /* <-------------------------THIS IS HEADER--------------------------------------------------> */
-.header
-{
+.header {
     position: sticky;
     width: 100vw;
     display: flex;
@@ -81,8 +80,7 @@ body
     z-index: 5;
 }
 
-.header #navbar
-{
+.header #navbar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,8 +88,7 @@ body
     /* background-color: yellow; */
 }
 
-.header #navbar a
-{
+.header #navbar a {
     border-radius: 5px;
     padding: 0.5rem 2% 0.5rem;
     text-decoration: none;
@@ -101,12 +98,11 @@ body
     font-weight: 600;
     border: 2px solid var(--draw4);
     transition: 0.2s ease;
-   
+
 }
 
 .header #navbar a:hover,
-.header #navbar a.active
-{
+.header #navbar a.active {
     background-color: var(--draw4);
     color: var(--draw2);
 }
@@ -115,26 +111,24 @@ body
 #logo {
     display: flex;
     align-items: center;
-    font-size: 18px; 
-    font-weight: bold; 
+    font-size: 18px;
+    font-weight: bold;
     width: auto;
     position: absolute;
     /* background-color: #009a6e; */
     cursor: pointer;
 }
 
-#logo span
-{
-    color: var(--draw4); 
+#logo span {
+    color: var(--draw4);
     font-size: 20px;
     width: 100%;
 }
 
-#logo i 
-{
-    margin-right: 8px; 
-    font-size: 32px; 
-    color: var(--draw4); 
+#logo i {
+    margin-right: 8px;
+    font-size: 32px;
+    color: var(--draw4);
 }
 
 
@@ -143,105 +137,134 @@ body
 
 
 /* <-------------------------THIS IS MAIN--------------------------------------------------> */
-.main
-{
+.main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-grow: 1;
     height: 100%;
     width: 100vw;
-    /* background-color: yellow; */
+    background-color: #f7f7f5;
     position: relative;
     overflow: hidden;
 }
 
 
 /* <---------------------------------------THIS IS HOME SECTION-------------------------------> */
-.main .home-section
-{
+.main .home-section {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 100%;
     position: relative;
+    padding: 4rem 2rem;
+    box-sizing: border-box;
 }
 
-.home-section .hero-content
-{
+.home-section .hero-content {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    width: 50%;
-    background-color: rgba(255, 255, 255, 0.26);
-    border-radius: 5px;
-    padding: 1rem;
-    position: absolute;
+    width: 45%;
+    /* background-color: rgba(255, 255, 255, 0.26); */
+    border-radius: 12px;
+    margin: 1rem;
+    padding: 1.5rem;
+    position: relative;
     backdrop-filter: blur(10px);
     z-index: 1;
-    box-shadow: 0 0 3px 2px rgba(0,0,0,0.15);
-    
+    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); */
+    animation: fade-in 1s ease-out;
 }
 
-.home-section .hero-content h1
-{
+.home-section .hero-content h1 {
     font-family: "Bebas Neue", sans-serif;
-    margin: 1rem 0 1rem;
-    font-size: 55px;
-    animation: slide-in-top 1s ease forwards;
+    margin: 1rem 0;
+    font-size: 45px;
     color: var(--c3);
     font-weight: bold;
-}
-.home-section .hero-content p
-{
-    color: var(--c3);
-    margin: 1rem 0 1rem;
-    font-size: 18px;
-    font-weight: 600;
     text-align: center;
-    animation: slide-in-top 0.8s ease forwards;
+    animation: slide-in-top 1s ease forwards;
 }
-.home-section .hero-content .cta-button  
-{
+
+.home-section .hero-content p {
+    color: var(--c3);
+    margin: 1rem 0;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+    line-height: 1.8;
+    animation: slide-in-top 1.2s ease forwards;
+}
+
+.home-section .hero-content .cta-button {
     border-radius: 5px;
-    margin: 1rem 0 1rem;
+    margin: 1rem 0;
+    padding: 12px 24px;
     text-decoration: none;
     border: 2px solid var(--draw1);
-    padding: 0.5rem 2% 0.5rem;
     color: var(--draw1);
     font-weight: 600;
-    transition: 0.3s ease;
-    animation: slide-in-top 0.5s ease forwards;
-}
-.home-section .hero-content .cta-button:hover
-{
-   background-color: var(--c3);
-   color: var(--draw2);
+    text-align: center;
+    transition: all 0.3s ease;
+    animation: slide-in-top 1.5s ease forwards;
+    cursor: pointer;
+    font-size: 18px;
 }
 
-.home-section #img-container
-{
+.home-section .hero-content .cta-button:hover {
+    background-color: var(--draw4);
+    color: var(--draw2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+.home-section #img-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 70%;
+    height: 70vh;
     position: absolute;
-    background-image: url('../assets/imgs/heroImage.webp');
-    background-position: center;
-    background-repeat: repeat-x;
-    animation: fade-in-top 1s ease;
+    right: 0;
+    margin-right: 3rem;
+    background-image: url('../assets/imgs/background.webp');
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0;
+}
 
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-top {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 
 
 /* <---------------------------------------THIS IS About SECTION-------------------------------> */
 
-.main .about-section
-{
+.main .about-section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -250,8 +273,7 @@ body
     position: relative;
 }
 
-.main .about-section .member-container
-{
+.main .about-section .member-container {
     width: 100%;
     height: auto;
     display: flex;
@@ -262,8 +284,7 @@ body
     padding: 1rem 2% 1rem;
 }
 
-.main .about-section .member-container .box
-{
+.main .about-section .member-container .box {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -278,40 +299,36 @@ body
     animation: slide-in-top calc(var(--i)*0.3s) ease forwards;
 }
 
-.main .about-section .member-container .box:hover
-{
+.main .about-section .member-container .box:hover {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-.member-container .box #image
-{
+.member-container .box #image {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100px;
     height: 100px;
     /* background-color: #009a6e; */
-    
+
 }
-.member-container .box #image img
-{
+
+.member-container .box #image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.member-container .box p
-{
-   font-size: 18px;
-   font-weight: bold;
-   margin-top: 1rem;
-   color: var(--draw1);
+.member-container .box p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 1rem;
+    color: var(--draw1);
 }
 
 
 /* <----------------------------THIS IS INFO CONTAINER---------------------------> */
-.member-container .bigInfo
-{
+.member-container .bigInfo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -319,21 +336,19 @@ body
 }
 
 
-.member-container .info-container
-{
+.member-container .info-container {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: transparent;
     border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     animation: slide-in-top 0.6s ease forwards;
     position: relative;
 
 }
 
-.member-container .info-container button
-{
+.member-container .info-container button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -349,16 +364,15 @@ body
 }
 
 
-.info-container .left-container
-{
+.info-container .left-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 1rem 2% 1rem;
 }
-.info-container .left-container #img
-{
+
+.info-container .left-container #img {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -370,9 +384,9 @@ body
     border-radius: 50%;
     /* background-color: yellow; */
 }
-.info-container .left-container #img img
-{
-   object-fit: contain;
+
+.info-container .left-container #img img {
+    object-fit: contain;
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -380,13 +394,11 @@ body
 
 }
 
-.info-container .left-container #img:hover img
-{
+.info-container .left-container #img:hover img {
     transform: scale(1.1);
 }
 
-.info-container .left-container #contact
-{
+.info-container .left-container #contact {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -397,8 +409,7 @@ body
     margin-top: 1.2rem;
 }
 
-.info-container .left-container #contact a
-{
+.info-container .left-container #contact a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -409,26 +420,23 @@ body
 }
 
 
-.info-container .right-container
-{
+.info-container .right-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-left: 1rem;
-    /* background-color: yellow; */
+    width: 46rem;
 }
 
-.info-container .right-container i
-{
+.info-container .right-container i {
     font-size: 16px;
     font-weight: bold;
     color: var(--draw1);
 }
 
 
-.info-container .right-container p
-{
+.info-container .right-container p {
     width: 100%;
     margin: 1rem 0 0.5rem 0;
     font-size: 16px;
@@ -441,18 +449,16 @@ body
 /* <--------------------------------------------THIS IS SIDE INFO------------------------------------> */
 
 
-.side-member
-{
+.side-member {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     position: absolute;
-    right: 0.5rem;  
+    right: 0.5rem;
 }
 
-.side-member .img-mem
-{
+.side-member .img-mem {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -464,11 +470,10 @@ body
     overflow: hidden;
     cursor: pointer;
     transition: 0.3s ease;
-    animation: slide-in-right calc(var(--i) * 0.3s) ease; 
+    animation: slide-in-right calc(var(--i) * 0.3s) ease;
 }
 
-.side-member .img-mem img
-{
+.side-member .img-mem img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -476,19 +481,16 @@ body
 }
 
 
-.img-mem.active
-{
+.img-mem.active {
     transform: translateX(-25px);
 }
 
-.side-member:hover .img-mem:hover
-{
+.side-member:hover .img-mem:hover {
     filter: brightness(1);
 }
 
 .side-member:hover .img-mem:not(:hover),
-.img-mem:not(.active)
-{
+.img-mem:not(.active) {
     filter: brightness(0);
 }
 
@@ -497,8 +499,7 @@ body
 
 /* <--------------------------THIS IS GROUP DIARY--------------------------------------------------> */
 
-.main .diary-section
-{
+.main .diary-section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -508,62 +509,53 @@ body
     /* background-color: #009a6e;` */
 }
 
-table 
-{
+table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 1rem;
-    text-align: left; 
+    text-align: left;
     animation: fade-in-top 1s ease forwards;
     transition: 0.3s ease;
 }
 
-thead th 
-{
+thead th {
     background-color: var(--draw4);
     color: var(--snow);
     padding: 10px;
     border: 1px solid var(--draw1);
-    text-align: center; 
+    text-align: center;
 }
 
-.table-body td 
-{
+.table-body td {
     padding: 1rem;
     border: 1px solid var(--draw1);
     color: var(--draw1);
-    vertical-align: middle; 
+    vertical-align: middle;
 }
 
-.table-body td:nth-child(1), 
-.table-body td:nth-child(2), 
-.table-body td:nth-child(6) 
-{ 
-    text-align: center; 
+.table-body td:nth-child(1),
+.table-body td:nth-child(2),
+.table-body td:nth-child(6) {
+    text-align: center;
 }
 
 
-.table-body .t-row:hover 
-{
+.table-body .t-row:hover {
     background-color: var(--draw3);
 }
 
 
-.main .diary-section #weeks
-{
+.main .diary-section #weeks {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: green; */
     margin-bottom: 2rem;
 }
 
-#weeks .week-btn
-{
+#weeks .week-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: yellow; */
     font-size: 18px;
     font-weight: 500;
     padding: 0.5rem 1rem 0.5rem 1rem;
@@ -572,12 +564,11 @@ thead th
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s ease;
-    
+
 }
 
 #weeks .week-btn.active,
-#weeks .week-btn:hover
-{
+#weeks .week-btn:hover {
     background-color: var(--draw4);
     color: var(--draw2);
 }
@@ -587,8 +578,7 @@ thead th
 
 
 
-.main .project-section
-{
+.main .project-section {
     width: 100%;
     height: 100%;
     display: flex;
@@ -601,23 +591,21 @@ thead th
     overflow: hidden;
 }
 
-.main .project-section .sidebar
-{
+.main .project-section .sidebar {
     /* background-color: var(--bright-gray); */
     height: 100%;
-    box-shadow: 2px 0 3px rgba(0,0,0,0.3);
-}
-.main .project-section .sidebar nav
-{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-direction: column;
-   padding: 1rem 0 1rem;
+    box-shadow: 2px 0 3px rgba(0, 0, 0, 0.3);
 }
 
-.main .project-section .sidebar nav a
-{
+.main .project-section .sidebar nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem 0 1rem;
+}
+
+.main .project-section .sidebar nav a {
     width: 100%;
     padding: 1rem;
     color: var(--draw4);
@@ -630,14 +618,12 @@ thead th
 
 
 .main .project-section .sidebar nav a:hover,
-.main .project-section .sidebar nav a.active
-{
+.main .project-section .sidebar nav a.active {
     background-color: var(--draw4);
     color: var(--draw2);
 }
 
-.main .project-section .main-content
-{
+.main .project-section .main-content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -662,14 +648,13 @@ thead th
 .requirement-content table {
     width: 100%;
     border-collapse: collapse;
-    text-align: left; 
+    text-align: left;
     animation: fade-in-top 1s ease forwards;
     transition: 0.3s ease;
     margin: 1.5rem 0;
 }
 
-.requirement-content table th
-{
+.requirement-content table th {
     background-color: var(--draw4);
     color: var(--draw2);
 }
@@ -677,44 +662,40 @@ thead th
 .requirement-content tbody td {
     border: 1px solid var(--draw1);
     color: var(--draw1);
-    vertical-align: middle; 
-    padding: 1rem; 
+    vertical-align: middle;
+    padding: 1rem;
     font-weight: 500;
     transition: 0.1s linear;
 }
 
-.requirement-content tbody tr:hover
-{
+.requirement-content tbody tr:hover {
     background-color: var(--draw3);
 }
 
 .requirement-content ul {
-    margin: 1.5rem 0; 
-    padding-left: 2rem; 
+    margin: 1.5rem 0;
+    padding-left: 2rem;
 }
 
-.requirement-content ul li
-{
+.requirement-content ul li {
+    line-height: 1.5;
     margin: 1rem 0;
     font-weight: 500;
     animation: slide-in-left 1s ease forwards;
 }
 
-.requirement-content h2
-{
+.requirement-content h2 {
     animation: slide-in-left 0.5s ease forwards;
 }
 
 /* <------------------------------------THIS IS DESIGN TAB----------------------------------------> */
 
-.design-content
-{
+.design-content {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
     height: 100%;
-    /* background-color: pink; */
     overflow-y: scroll;
     padding: 1rem 2% 1rem;
     gap: 2rem;
@@ -736,13 +717,11 @@ thead th
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.image-box:hover 
-{
+.image-box:hover {
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
-.image-box img 
-{
+.image-box img {
     width: 100%;
     height: 200px;
     margin-bottom: 15px;
@@ -751,8 +730,7 @@ thead th
     animation-range: entry 0% cover 30%;
 }
 
-.image-box:active 
-{
+.image-box:active {
     z-index: 100;
     transform: scale(1.5);
     /* transform: translate(-50%, -50%); */
@@ -762,8 +740,7 @@ thead th
 
 /* <---------------------------------------------THIS IS IMPLEMENTATION TAB------------------------------> */
 
-.implementation-content
-{
+.implementation-content {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -771,12 +748,10 @@ thead th
     height: 100%;
     padding: 1rem 2% 1rem;
     gap: 2rem;
-    /* background-color: yellow; */
 }
 
 
-.implementation-content .funcBtn
-{
+.implementation-content .funcBtn {
     width: 100%;
     max-width: 150px;
     max-height: 60px;
@@ -788,10 +763,9 @@ thead th
     border: 2px solid var(--draw4);
     transition: 0.3s ease;
     animation: fade-in-top 0.3s ease;
-}   
+}
 
-.implementation-content .funcBtn:hover
-{
+.implementation-content .funcBtn:hover {
     background-color: var(--draw4);
     color: var(--draw2);
 }
@@ -828,13 +802,16 @@ thead th
     margin-bottom: 1rem;
 }
 
-.message, .login-text, .resend-text {
+.message,
+.login-text,
+.resend-text {
     color: #666;
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
 
-.login-text a, .resend-text a {
+.login-text a,
+.resend-text a {
     color: #1877f2;
     text-decoration: none;
     cursor: pointer;
@@ -933,7 +910,8 @@ thead th
 }
 
 /* Success and Error Message Styles */
-.success-message, .error-message {
+.success-message,
+.error-message {
     font-size: 0.9rem;
     padding: 0.8rem;
     border-radius: 8px;
@@ -963,177 +941,162 @@ thead th
 
 
 /* <-------------------------THIS IS FOOTER--------------------------------------------------> */
-.footer 
-{
+.footer {
     width: 100vw;
     background-color: var(--draw2);
     border-top: 1px solid var(--draw8);
     padding: 0.5rem 2% 0.5rem;
 }
-  
-.footer-container 
-{
+
+.footer-container {
     display: flex;
     justify-content: space-around;
     text-align: left;
     font-size: 14px;
     color: var(--c3);
 }
-  
-.footer-section h3 
-{
+
+.footer-section h3 {
     color: var(--c3);
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
-  
-.footer-section ul 
-{
+
+.footer-section ul {
     list-style: none;
 }
-  
-.footer-section ul li 
-{
+
+.footer-section ul li {
     margin-bottom: 4px;
 }
-  
-.footer-section ul li a 
-{
-    color: rgb(133, 68, 255);
+
+.footer-section ul li a {
+    color: rgb(33, 56, 99);
     text-decoration: none;
     cursor: pointer;
     font-weight: 600;
     transition: 0.3s ease;
 }
-  
-.footer-section ul li a:hover 
-{
+
+.footer-section ul li a:hover {
     text-decoration: underline;
+    color: rgb(0, 89, 255);
 }
-  
+
 
 
 
 
 /* <-------------------------THIS IS KEYFRAMES--------------------------------------------------> */
 
-@keyframes slide-out-left 
-{	
+@keyframes slide-out-left {
     from {
         transform: translateX(0);
     }
+
     to {
         transform: translateX(-100%);
     }
 }
 
-@keyframes slide-in-top 
-{
-    0% 
-    {
-        transform:translateY(-1000px);
-        opacity:0;
+@keyframes slide-in-top {
+    0% {
+        transform: translateY(-1000px);
+        opacity: 0;
     }
-    100% 
-    {
-        transform:translateY(0);
-        opacity:1;
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
-@keyframes slit-in-vertical 
-{
-			
-    0% 
-    {
-        transform:translateZ(-800px) rotateY(90deg);
-        opacity:0;
+@keyframes slit-in-vertical {
+
+    0% {
+        transform: translateZ(-800px) rotateY(90deg);
+        opacity: 0;
     }
-    50% 
-    {
-        transform:translateZ(-160px) rotateY(87deg);
-        opacity:1;
+
+    50% {
+        transform: translateZ(-160px) rotateY(87deg);
+        opacity: 1;
     }
-    100% 
-    {
-        transform:translateZ(0) rotateY(0);
+
+    100% {
+        transform: translateZ(0) rotateY(0);
     }
 }
 
-@keyframes fade-in-top 
-{
-			
-    0% 
-    {
-        transform:translateY(-50px);
-        opacity:0;
+@keyframes fade-in-top {
+
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
     }
-    100% 
-    {
-        transform:translateY(0);
-        opacity:1;
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
 
-@keyframes appear
-{
-    0%
-    {
+@keyframes appear {
+    0% {
         opacity: 0;
         filter: brightness(0);
     }
 
-    100%
-    {
+    100% {
         opacity: 1;
     }
 }
 
 @keyframes slide-in-left {
-			
+
     0% {
-        transform:translateX(-1000px);
-        opacity:0;
+        transform: translateX(-1000px);
+        opacity: 0;
     }
+
     100% {
-        transform:translateX(0);
-        opacity:1;
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
 @keyframes slide-in-right {
-			
+
     0% {
-        transform:translateX(1000px);
-        opacity:0;
+        transform: translateX(1000px);
+        opacity: 0;
     }
+
     100% {
-        transform:translateX(0);
-        opacity:1;
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
-@keyframes appear2
-{
-    0%
-    {
+@keyframes appear2 {
+    0% {
         filter: brightness(0);
     }
 
-    100%
-    {
+    100% {
         filter: brightness(1);
     }
 }
 
 @keyframes fade-out {
-			
+
     0% {
-        opacity:1;
+        opacity: 1;
     }
+
     100% {
-        opacity:0;
+        opacity: 0;
     }
 }
 
@@ -1204,7 +1167,8 @@ thead th
     }
 
     .side-member {
-        display: none; /* Ẩn các thành phần phụ nếu không cần thiết */
+        display: none;
+        /* Ẩn các thành phần phụ nếu không cần thiết */
     }
 
     #logo {
