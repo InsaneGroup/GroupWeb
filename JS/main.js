@@ -480,6 +480,13 @@ const renderImplementation = () => {
         <button class="funcBtn">Login</button>
         <button class="funcBtn">Register</button>
         <button class="funcBtn">Forgot password</button>
+        <button class="funcBtn">Home</button>
+        <button class="funcBtn">Recipes</button>
+        <button class="funcBtn">Categories</button>
+        <button class="funcBtn">Favorite</button>
+        <button class="funcBtn">Blog</button>
+        <button class="funcBtn">Contact us</button>
+        <button class="funcBtn">Profile</button>
     `
     return impleContent
 }
@@ -520,7 +527,14 @@ proTabs.forEach((tab, index) => {
             const webProjectFunction = [
                 () => renderLogin(),
                 () => renderRegister(),
-                () => renderForgotPassword()
+                () => renderForgotPassword(),
+                () => renderHome(),
+                () => renderRecipes(),
+                () => renderCatergories(),
+                () => renderFavorite(),
+                () => renderBolg(),
+                () => renderContact(),
+                () => renderProfile()
             ]
 
             if (funcBtn) {
