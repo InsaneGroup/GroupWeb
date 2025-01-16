@@ -192,9 +192,9 @@ body {
 .home-section .hero-content p {
     color: var(--c3);
     margin: 1rem 0;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
-    text-align: left;
+    text-align: justify;
     line-height: 1.8;
     animation: slide-in-top 1.2s ease forwards;
 }
@@ -226,7 +226,7 @@ body {
     justify-content: flex-end;
     align-items: flex-end;
     width: 70%;
-    height: 70vh;
+    height: 80vh;
     position: absolute;
     right: 0;
     margin-right: 3rem;
@@ -739,21 +739,19 @@ thead th {
 
 
 /* <---------------------------------------------THIS IS IMPLEMENTATION TAB------------------------------> */
-
 .implementation-content {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-    height: 100%;
-    padding: 1rem 2% 1rem;
+    height: 70%;
+    padding: 1rem 2%;
     gap: 2rem;
 }
 
-
 .implementation-content .funcBtn {
-    width: 100%;
-    max-width: 150px;
+    flex: 1 1 calc(20% - 1.5rem);
+    max-width: calc(20% - 1.5rem);
     max-height: 60px;
     background-color: var(--draw2);
     color: var(--draw1);
@@ -763,6 +761,8 @@ thead th {
     border: 2px solid var(--draw4);
     transition: 0.3s ease;
     animation: fade-in-top 0.3s ease;
+    text-align: center;
+    padding: 0.5rem;
 }
 
 .implementation-content .funcBtn:hover {
@@ -772,8 +772,10 @@ thead th {
 
 
 
+
+
 /* <--------------------------------------THIS IS LOGIN FUNCTION------------------------------> */
-.container {
+/* .container {
     background: #ffffff;
     padding: 2rem;
     border-radius: 20px;
@@ -837,7 +839,6 @@ thead th {
     border-radius: 8px;
 }
 
-/* Code Input Specific Styles */
 .code-inputs {
     display: flex;
     justify-content: space-between;
@@ -861,7 +862,6 @@ thead th {
     background: #145dbf;
 }
 
-/* Checkbox and Social Button Styles */
 .checkbox-group {
     display: flex;
     align-items: center;
@@ -909,7 +909,6 @@ thead th {
     background: #f0f2f5;
 }
 
-/* Success and Error Message Styles */
 .success-message,
 .error-message {
     font-size: 0.9rem;
@@ -930,15 +929,7 @@ thead th {
 
 
 
-
-
-
-
-
-
-
-
-
+*/
 
 /* <-------------------------THIS IS FOOTER--------------------------------------------------> */
 .footer {
@@ -1168,7 +1159,6 @@ thead th {
 
     .side-member {
         display: none;
-        /* Ẩn các thành phần phụ nếu không cần thiết */
     }
 
     #logo {
