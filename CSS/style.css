@@ -78,6 +78,7 @@ body {
     padding: 1rem 2% 1rem;
     border-bottom: 1px solid var(--draw8);
     z-index: 5;
+    top: 0;
 }
 
 .header #navbar {
@@ -446,6 +447,22 @@ body {
     text-align: justify;
 }
 
+.info-container .right-container a
+{
+    width: 100%;
+    /* margin: 0.5rem 0 1rem 0; */
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--draw4);
+    padding: 0 3% 0;
+    text-align: justify;
+}
+
+.info-container .right-container a:hover
+{
+    color: var(--c8);
+}
+
 /* <--------------------------------------------THIS IS SIDE INFO------------------------------------> */
 
 
@@ -629,6 +646,7 @@ thead th {
     align-items: center;
     width: 100%;
     height: 100%;
+    position: relative;
 
 }
 
@@ -770,7 +788,20 @@ thead th {
     color: var(--draw2);
 }
 
+.main-content .iframe
+{
+    position: absolute;
+    background-color: var(--c3);
+    z-index: 10000;
+    width: 100%;
+    height: 100vh;
+}
 
+.iframe iframe
+{
+    width: 100%;
+    height: 100%;
+}
 
 
 

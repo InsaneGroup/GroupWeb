@@ -20,6 +20,7 @@ const designContent = $('.design-content')
 const aboutSection = $('.about-section')
 
 
+
 const imgInfo = [
     {
         name: "Home",
@@ -82,35 +83,45 @@ const memberInfo = [
         id: "23130231",
         img: "../assets/imgs/male1.webp",
         position: "Trưởng nhóm",
-        info: "Nguyễn Thành Phát là phụ trách phân công và tổng hợp web. Sinh viên khoa công nghệ thông tin (khóa 49) năm 2 Trường Đại học Nông Lâm."
+        info: "Nguyễn Thành Phát là phụ trách phân công và tổng hợp web. Sinh viên khoa công nghệ thông tin (khóa 49) năm 2 Trường Đại học Nông Lâm.",
+        result: "my result",
+        result_content: 'My result'
     },
     {
         name: "Nguyễn Thị Hương Lan",
         id: "23130168",
         img: "../assets/imgs/female1.webp",
         position: "Thiết kế giao diện",
-        info: "Nguyễn Thị Hương Lan phụ trách thiết kế giao diện người dùng và tạo ra trải nghiệm tuyệt vời cho người dùng. Sinh viên năm hai khoa công nghệ thông tin (khóa 49) trường đại học Nông Lâm."
+        info: "Nguyễn Thị Hương Lan phụ trách thiết kế giao diện người dùng và tạo ra trải nghiệm tuyệt vời cho người dùng. Sinh viên năm hai khoa công nghệ thông tin (khóa 49) trường đại học Nông Lâm.",
+        result: "my result",
+         result_content: 'My result'
     },
     {
         name: "Trần Lê Phúc An",
         id: "23130004",
         img: "../assets/imgs/female3.webp",
         position: "Phân tích dữ liệu",
-        info: ""
+        info: "",
+        result: "",
+        result_content: ''
     },
     {
         name: "Châu Thị Thúy Quỳnh",
         id: "23130265",
         img: "../assets/imgs/female2.webp",
         position: "Lập trình viên",
-        info: ""
+        info: "",
+        result: "",
+        result_content: ''
     },
     {
         name: "Chu Tấn Tài",
         id: "23130280",
         img: "../assets/imgs/male2.webp",
         position: "Lập trình viên",
-        info: ""
+        info: "",
+        result: "",
+        result_content: ''
     },
 ]
 
@@ -178,7 +189,7 @@ const renderMember = (name, link, index) => {
 }
 
 
-const renderDetails = (name, link, id, pos, info) => {
+const renderDetails = (name, link, id, pos, info, result, result_content) => {
     const bigInfo = document.createElement('div')
     bigInfo.classList.add('bigInfo')
 
@@ -202,6 +213,8 @@ const renderDetails = (name, link, id, pos, info) => {
                 <p><i class='bx bx-barcode'></i> ${id}</p>
                 <p><i class='bx bx-envelope'></i> ${id}@st.hcmuaf.edu.vn</p>
                 <p><i class='bx bx-info-circle'></i> ${info}</p>
+                <p><i class='bx bxs-balloon'></i> <a href=${result}>${result_content}</a></p>
+                
             </div>
         </div>
     `
@@ -264,7 +277,10 @@ imgMebers.forEach((member, index) => {
         this.classList.add('active')
         memberContainer.replaceChildren()
 
-        const bigInfo = renderDetails(mem.name, mem.img, mem.id, mem.position, mem.info)
+       
+       
+        const bigInfo = renderDetails(mem?.name || '', mem?.img || '', mem?.id || '',
+             mem?.position || '', mem?.info || '', mem?.result || '', mem?.result_content)
         const button = bigInfo.querySelector('button')
         button.addEventListener('click', () => {
             memberContainer.replaceChildren()
@@ -289,7 +305,10 @@ const repeatShow = () => {
             $('.img-mem.active').classList.remove('active')
             imgMem.classList.add('active')
 
-            const bigInfo = renderDetails(mem.name, mem.img, mem.id, mem.position, mem.info)
+           
+
+            const bigInfo = renderDetails(mem?.name || '', mem?.img || '', mem?.id || '',
+                mem?.position || '', mem?.info || '', mem?.result || '', mem?.result_content)
             const button = bigInfo.querySelector('button')
             button.addEventListener('click', () => {
                 memberContainer.replaceChildren()
@@ -483,10 +502,8 @@ const renderImplementation = () => {
         <button class="funcBtn">Home</button>
         <button class="funcBtn">Recipes</button>
         <button class="funcBtn">Categories</button>
-        <button class="funcBtn">Favorite</button>
         <button class="funcBtn">Blog</button>
         <button class="funcBtn">Contact us</button>
-        <button class="funcBtn">Profile</button>
     `
     return impleContent
 }
@@ -523,33 +540,127 @@ proTabs.forEach((tab, index) => {
         mainContent.replaceChildren()
         projectTabs[index]()
         if (index === 2) {
-            const funcBtn = $$('.funcBtn')
-            const webProjectFunction = [
-                () => renderLogin(),
-                () => renderRegister(),
-                () => renderForgotPassword(),
-                () => renderHome(),
-                () => renderRecipes(),
-                () => renderCatergories(),
-                () => renderFavorite(),
-                () => renderBolg(),
-                () => renderContact(),
-                () => renderProfile()
-            ]
-
-            if (funcBtn) {
-                funcBtn.forEach((btn, index) => {
-                    btn.addEventListener('click', () => {
-                        mainContent.replaceChildren()
-                        mainContent.appendChild(webProjectFunction[index]())
+            
+           if($$('.implementation-content'))
+           {
+                const funcBtn = $$('.funcBtn')
+                
+                funcBtn.forEach((btn, index) =>
+                {
+                    btn.addEventListener('click', ()=>
+                    {
+                        webProjectFunction[index]()
                     })
-                }
-                )
-            }
+                    
+                })
+                
+            
+           }
+
+
         }
 
     })
 })
+
+
+const Iframe = ()=>
+{
+    const iframe = document.createElement('div')
+    iframe.classList.add('iframe')
+    iframe.innerHTML = 
+            `
+                <iframe src="" frameborder="0"></iframe>
+            `
+
+    return iframe
+    
+
+}
+
+
+
+
+const webProjectFunction = [
+    () => renderLogin(),
+    () => renderRegister(),
+    () => renderForgotPassword(),
+    () => renderHome(),
+    () => renderRecipes(),
+    () => renderCatergories(),
+    () => renderBlog(),
+    () => renderContact(),
+]
+
+
+
+
+function renderLogin()
+{
+    mainContent.replaceChildren()
+    const iframe_container = Iframe()
+    const iframe = iframe_container.querySelector('iframe')
+    iframe.src = 'https://insanegroup.github.io/WebProject/src/html/login.html'
+    mainContent.appendChild(iframe_container)
+    
+}
+function renderRegister()
+{
+    mainContent.replaceChildren()
+    const iframe_container = Iframe()
+    const iframe = iframe_container.querySelector('iframe')
+    iframe.src = 'https://insanegroup.github.io/WebProject/src/html/login.html'
+    mainContent.appendChild(iframe_container)
+}
+function renderForgotPassword()
+{
+    mainContent.replaceChildren()
+    const iframe_container = Iframe()
+    const iframe = iframe_container.querySelector('iframe')
+    iframe.src = 'https://insanegroup.github.io/WebProject/src/html/forgot.html'
+    mainContent.appendChild(iframe_container)
+}
+function renderHome()
+{
+    mainContent.replaceChildren()
+    const iframe_container = Iframe()
+    const iframe = iframe_container.querySelector('iframe')
+    iframe.src = 'https://insanegroup.github.io/WebProject/index.html'
+    mainContent.appendChild(iframe_container)
+}
+function renderRecipes()
+{
+    mainContent.replaceChildren()
+    const iframe_container = Iframe()
+    const iframe = iframe_container.querySelector('iframe')
+    iframe.src = 'https://insanegroup.github.io/WebProject/src/html/recipes.html'
+    mainContent.appendChild(iframe_container)
+}
+function renderCatergories()
+{
+    mainContent.replaceChildren()
+    const iframe_container = Iframe()
+    const iframe = iframe_container.querySelector('iframe')
+    iframe.src = 'https://insanegroup.github.io/WebProject/src/html/catagories.html'
+    mainContent.appendChild(iframe_container)
+}
+
+function renderBlog()
+{
+    mainContent.replaceChildren()
+    const iframe_container = Iframe()
+    const iframe = iframe_container.querySelector('iframe')
+    iframe.src = 'https://insanegroup.github.io/WebProject/src/html/blog.html'
+    mainContent.appendChild(iframe_container)
+}
+function renderContact()
+{
+    mainContent.replaceChildren()
+    const iframe_container = Iframe()
+    const iframe = iframe_container.querySelector('iframe')
+    iframe.src = 'https://insanegroup.github.io/WebProject/src/html/contact.html'
+    mainContent.appendChild(iframe_container)
+}
 
 
 
