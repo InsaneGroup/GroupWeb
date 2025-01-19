@@ -85,7 +85,9 @@ const memberInfo = [
         position: "Trưởng nhóm",
         info: "Nguyễn Thành Phát là phụ trách phân công và tổng hợp web. Sinh viên khoa công nghệ thông tin (khóa 49) năm 2 Trường Đại học Nông Lâm.",
         result: "https://tinyboy2805.github.io/PersonalResult/",
-        result_content: 'My result'
+        result_content: 'My result',
+        fb: 'https://www.facebook.com/TinyBoy28',
+        github: 'https://github.com/TinyBoy2805'
     },
     {
         name: "Nguyễn Thị Hương Lan",
@@ -94,7 +96,9 @@ const memberInfo = [
         position: "Thiết kế giao diện",
         info: "Nguyễn Thị Hương Lan phụ trách thiết kế giao diện người dùng và tạo ra trải nghiệm tuyệt vời cho người dùng. Sinh viên năm hai khoa công nghệ thông tin (khóa 49) trường đại học Nông Lâm.",
         result: "https://becon1206.github.io/MyProject/",
-         result_content: 'My result'
+         result_content: 'My result',
+         fb: 'https://www.facebook.com/isuel.lan',
+         github: 'https://github.com/Becon1206'
     },
     {
         name: "Trần Lê Phúc An",
@@ -103,7 +107,9 @@ const memberInfo = [
         position: "",
         info: "",
         result: "",
-        result_content: ''
+        result_content: '',
+        fb: '',
+        github: ''
     },
     {
         name: "Châu Thị Thúy Quỳnh",
@@ -112,7 +118,9 @@ const memberInfo = [
         position: "",
         info: "",
         result: "",
-        result_content: ''
+        result_content: '',
+        fb: '',
+        github: ''
     },
     {
         name: "Chu Tấn Tài",
@@ -121,7 +129,9 @@ const memberInfo = [
         position: "",
         info: "",
         result: "",
-        result_content: ''
+        result_content: '',
+        fb: '',
+        github: ''
     },
 ]
 
@@ -189,7 +199,7 @@ const renderMember = (name, link, index) => {
 }
 
 
-const renderDetails = (name, link, id, pos, info, result, result_content) => {
+const renderDetails = (name, link, id, pos, info, result, result_content, fb, github) => {
     const bigInfo = document.createElement('div')
     bigInfo.classList.add('bigInfo')
 
@@ -201,8 +211,8 @@ const renderDetails = (name, link, id, pos, info, result, result_content) => {
                     <img src="${link}" alt="" loading="lazy">
                 </div>
                 <div id="contact">
-                    <a href="https://facebook.com"><i class='bx bxl-facebook'></i></a>
-                    <a href="https://github.com"><i class='bx bxl-github'></i></a>
+                    <a href="${fb}"><i class='bx bxl-facebook'></i></a>
+                    <a href="${github}"><i class='bx bxl-github'></i></a>
                     <a href="https://google.com"><i class='bx bxl-google'></i></a>
                 </div>
             </div>
@@ -280,7 +290,7 @@ imgMebers.forEach((member, index) => {
        
        
         const bigInfo = renderDetails(mem?.name || '', mem?.img || '', mem?.id || '',
-             mem?.position || '', mem?.info || '', mem?.result || '', mem?.result_content)
+             mem?.position || '', mem?.info || '', mem?.result || '', mem?.result_content, mem?.fb, mem?.github)
         const button = bigInfo.querySelector('button')
         button.addEventListener('click', () => {
             memberContainer.replaceChildren()
@@ -308,7 +318,7 @@ const repeatShow = () => {
            
 
             const bigInfo = renderDetails(mem?.name || '', mem?.img || '', mem?.id || '',
-                mem?.position || '', mem?.info || '', mem?.result || '', mem?.result_content)
+                mem?.position || '', mem?.info || '', mem?.result || '', mem?.result_content, mem?.fb, mem?.github)
             const button = bigInfo.querySelector('button')
             button.addEventListener('click', () => {
                 memberContainer.replaceChildren()
@@ -462,6 +472,107 @@ const renderRequirement = () => {
                     </tr>
                   </tbody>
                 </table>
+
+                <h2>Style Guide</h2>
+                <h3>webProject</h3>
+                <ul>
+                  <li>
+                    <strong>Layout:</strong>
+                    <div>Header</div>
+                    <div>Content</div>
+                    <div>Footer</div>
+                  </li>
+                  <li>
+                    <strong>Typography:</strong> 
+                     <div>Font: Lato, sans serif</div>
+                      <div>Header font-size: 30-35</div>
+                      <div>Paragraph  font-size: 14-20</div>
+                      <div>Button/Text nhỏ font-size: 16-20</div>
+                     
+                  </li>
+                  <li>
+                    <strong>Color Pallet</strong> 
+                        <div>--c1: #151419;</div>
+                        <div>--c2: #f87313;</div>
+                        <div>--c3: #1b1b1e;</div>
+                        <div>--c4: #262626;</div>
+                        <div>--c5: #878787;</div>
+                        <div>--c6: #fbfbfb;</div>
+                  </li>
+                   <li>
+                    <strong>Images</strong> 
+                        <div>Kích thước linh hoạt tùy phần</div>
+                  </li>
+                   <li>
+                    <strong>File và Directory Structure</strong> 
+                         <div>RecipeWeb/</div>
+                         <div>│</div>
+                         <div>├── assets/             </div>
+                         <div>│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── API/         </div>
+                         <div>│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── images/         </div>
+                         <div>│</div>
+                         <div>├── src/              </div>
+                         <div>│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── HTML</div>
+                         <div>│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── CSS</div>
+                         <div>│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── JS</div>
+                         <div>│</div>
+                         <div>└── index.html           </div>
+                  </li>
+                </ul>
+                <h3>webGroup</h3>
+                <ul>
+                  <li>
+                    <strong>Layout:</strong>
+                    <div>Header</div>
+                    <div>Content</div>
+                    <div>Footer</div>
+                  </li>
+                  <li>
+                    <strong>Typography:</strong> 
+                     <div>Font: Quicksand, sans serif</div>
+                      <div>Header font-size: 30-35</div>
+                      <div>Paragraph  font-size: 14-20</div>
+                      <div>Button/Text nhỏ font-size: 16-20</div>
+                     
+                  </li>
+                  <li>
+                    <strong>Color Pallet</strong> 
+                        <div>--bright-gray: #e9efec;</div>
+                        <div>--snow: #fafafa;</div>
+                        <div>--white1: #FBFBFB;</div>
+                        <div>--white2: #FCFAEE;</div>
+                        <div>--darka: #2b2b2b;</div>
+                        <div>--c1: #0b0b0b;</div>
+                        <div>--c3: #2d2d2d;</div>
+                        <div>--draw2: #ffffff;</div>
+                        <div>--draw3: #d3d3d3;</div>
+                        <div>--draw4: #4f4f4f;</div>
+                        <div>--draw5: #D2B48C;</div>
+                        <div>--draw6: #2C3E50;</div>
+                        <div>--draw7: #F5F5DC;</div>
+                        <div>--draw8: #808080;</div>
+
+                  </li>
+                   <li>
+                    <strong>Images</strong> 
+                        <div>Kích thước linh hoạt tùy phần</div>
+                  </li>
+                   <li>
+                    <strong>File và Directory Structure</strong> 
+                         <div>Group11/</div>
+                         <div>│</div>
+                         <div>├── assets/</div>
+                         <div>│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── fileData/  </div>
+                         <div>│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── img/ </div>
+                         <div>│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── imgs/ </div>
+                         <div>│</div>
+                         <div>├── HTML/</div>
+                         <div>├── CSS/</div>
+                         <div>└── JS/</div>
+                         <div>│</div>
+                         <div>└── index.html           </div>
+                  </li>
+                </ul>
     `
 
     return reqireContent
