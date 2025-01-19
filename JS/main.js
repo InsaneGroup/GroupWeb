@@ -84,7 +84,7 @@ const memberInfo = [
         img: "../assets/imgs/male1.webp",
         position: "Trưởng nhóm",
         info: "Nguyễn Thành Phát là phụ trách phân công và tổng hợp web. Sinh viên khoa công nghệ thông tin (khóa 49) năm 2 Trường Đại học Nông Lâm.",
-        result: "my result",
+        result: "https://tinyboy2805.github.io/PersonalResult/",
         result_content: 'My result'
     },
     {
@@ -93,14 +93,14 @@ const memberInfo = [
         img: "../assets/imgs/female1.webp",
         position: "Thiết kế giao diện",
         info: "Nguyễn Thị Hương Lan phụ trách thiết kế giao diện người dùng và tạo ra trải nghiệm tuyệt vời cho người dùng. Sinh viên năm hai khoa công nghệ thông tin (khóa 49) trường đại học Nông Lâm.",
-        result: "my result",
+        result: "https://becon1206.github.io/MyProject/",
          result_content: 'My result'
     },
     {
         name: "Trần Lê Phúc An",
         id: "23130004",
         img: "../assets/imgs/female3.webp",
-        position: "Phân tích dữ liệu",
+        position: "",
         info: "",
         result: "",
         result_content: ''
@@ -109,7 +109,7 @@ const memberInfo = [
         name: "Châu Thị Thúy Quỳnh",
         id: "23130265",
         img: "../assets/imgs/female2.webp",
-        position: "Lập trình viên",
+        position: "",
         info: "",
         result: "",
         result_content: ''
@@ -118,7 +118,7 @@ const memberInfo = [
         name: "Chu Tấn Tài",
         id: "23130280",
         img: "../assets/imgs/male2.webp",
-        position: "Lập trình viên",
+        position: "",
         info: "",
         result: "",
         result_content: ''
@@ -539,6 +539,39 @@ proTabs.forEach((tab, index) => {
         this.classList.add('active')
         mainContent.replaceChildren()
         projectTabs[index]()
+
+        if(index === 1)
+            {
+                if($('.design-content')) 
+                {
+                    
+                    const img_box = $$('.image-box')
+                     
+                    img_box.forEach(box =>
+                    {
+                        box.addEventListener('click', ()=>
+                        {
+                            const imgLink = box.querySelector('img').src
+                            const dwn_img = renderDownloadImg(imgLink)
+                            mainContent.appendChild(dwn_img)
+
+                            const closeBtn = dwn_img.querySelector('.closeBtn')
+                            closeBtn.addEventListener('click', ()=>
+                            {
+                                mainContent.removeChild(dwn_img)
+                            })
+                            
+                        }
+                    )
+                    }
+                    )
+                     
+                }
+                
+                     
+                 
+            }
+
         if (index === 2) {
             
            if($$('.implementation-content'))
@@ -557,11 +590,30 @@ proTabs.forEach((tab, index) => {
             
            }
 
+           
+
 
         }
 
     })
 })
+
+
+
+const renderDownloadImg = (imglink)=>
+{
+    const show = document.createElement('div')
+    show.classList.add('show-img')
+    show.innerHTML = `
+        <div class="closeBtn">X</div>
+        <div class="img-item">
+            <img src="${imglink}" alt="" loading="lazy">
+        </div>
+        <a href="${imglink}" download>Download</a>
+          
+    `
+    return show
+}
 
 
 const Iframe = ()=>
